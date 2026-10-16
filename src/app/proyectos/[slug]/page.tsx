@@ -1,0 +1,1 @@
+export default function ProjectPage() { return <main>Proyecto en preparación</main>; }
