@@ -260,7 +260,7 @@ export default function Hero() {
                   </span>
 
                   <span className="text-[10px] font-bold text-[#442A36] sm:text-xs">
-                    creative.by.paula
+                    paulaarm_28
                   </span>
                 </div>
 

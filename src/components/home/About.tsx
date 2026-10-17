@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-
 import { motion, useReducedMotion } from "motion/react";
 
 import { ArrowDownRight, Camera, Flower2, Heart, Sparkles } from "lucide-react";
@@ -73,9 +72,7 @@ export default function About({ photoSrc }: AboutProps) {
       id="sobre-mi"
       className="relative isolate scroll-mt-16 overflow-hidden bg-[#FFF0F5] py-20 text-[#30202A] sm:py-24 lg:py-32"
     >
-      {/* =====================================================
-          DECORACIÓN DE FONDO
-      ===================================================== */}
+      {/* DECORACIÓN DE FONDO */}
 
       <div
         aria-hidden="true"
@@ -87,9 +84,7 @@ export default function About({ photoSrc }: AboutProps) {
         className="pointer-events-none absolute -left-28 bottom-0 h-72 w-72 rounded-full bg-[#FFE0A4]/40 blur-[100px]"
       />
 
-      {/* =====================================================
-          CONTENEDOR PRINCIPAL
-      ===================================================== */}
+      {/* CONTENEDOR PRINCIPAL */}
 
       <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
         {/* IDENTIFICADOR */}
@@ -107,14 +102,12 @@ export default function About({ photoSrc }: AboutProps) {
           <Flower2 size={18} strokeWidth={1.7} className="text-[#E94E8F]" />
         </motion.div>
 
-        {/* ===================================================
-            COMPOSICIÓN PRINCIPAL
-        =================================================== */}
+        {/* COMPOSICIÓN PRINCIPAL */}
 
         <div className="grid items-center gap-16 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20">
-          {/* =================================================
-              ZONA IZQUIERDA — FOTOGRAFÍA EDITORIAL
-          ================================================= */}
+          {/* =============================================
+              ZONA IZQUIERDA - FOTOGRAFÍA
+          ============================================= */}
 
           <motion.div
             {...reveal(0.1)}
@@ -139,7 +132,7 @@ export default function About({ photoSrc }: AboutProps) {
                 }}
               />
 
-              {/* FOTO TIPO POLAROID */}
+              {/* POLAROID */}
 
               <motion.div
                 initial={
@@ -180,8 +173,6 @@ export default function About({ photoSrc }: AboutProps) {
                     />
                   ) : (
                     <div className="relative flex h-full w-full flex-col items-center justify-center gap-5 overflow-hidden">
-                      {/* Elementos decorativos */}
-
                       <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#FFDCE8]" />
 
                       <div className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-[#E78AAF]" />
@@ -210,11 +201,7 @@ export default function About({ photoSrc }: AboutProps) {
                 </div>
               </motion.div>
 
-              {/* =================================================
-                  PEGATINAS
-              ================================================= */}
-
-              {/* Pegatina superior */}
+              {/* PEGATINA SUPERIOR */}
 
               <motion.div
                 initial={
@@ -245,7 +232,7 @@ export default function About({ photoSrc }: AboutProps) {
                 />
               </motion.div>
 
-              {/* Nota inferior */}
+              {/* NOTA INFERIOR */}
 
               <motion.div
                 {...reveal(0.6)}
@@ -262,7 +249,7 @@ export default function About({ photoSrc }: AboutProps) {
                 </p>
               </motion.div>
 
-              {/* Etiqueta lateral */}
+              {/* ETIQUETA LATERAL */}
 
               <div
                 aria-hidden="true"
@@ -273,17 +260,19 @@ export default function About({ photoSrc }: AboutProps) {
             </div>
           </motion.div>
 
-          {/* =================================================
-              ZONA DERECHA — PRESENTACIÓN
-          ================================================= */}
+          {/* =============================================
+              ZONA DERECHA - PRESENTACIÓN PERSONAL
+          ============================================= */}
 
           <div className="relative">
+            {/* ETIQUETA DE PRESENTACIÓN */}
+
             <motion.div {...reveal(0.1)}>
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#EFC4D5] bg-white/70 px-4 py-2">
                 <Sparkles size={15} className="text-[#E94E8F]" />
 
                 <span className="text-xs font-bold uppercase tracking-[0.15em] text-[#AB5579]">
-                  Nice to meet you
+                  HOLA, SOY PAULA ✳
                 </span>
               </div>
             </motion.div>
@@ -303,34 +292,45 @@ export default function About({ photoSrc }: AboutProps) {
               </span>
             </motion.h2>
 
-            {/* TEXTO PERSONAL */}
+            {/* =============================================
+                TEXTO REAL DE PAULA
+            ============================================= */}
 
             <motion.div
               {...reveal(0.32)}
               className="mt-9 max-w-xl space-y-5 text-base leading-8 text-[#705463] sm:text-lg sm:leading-9"
             >
-              {/*
-                Textos provisionales.
-                Sustituir por la presentación real de Paula.
-              */}
-
               <p>
-                Hola, soy{" "}
-                <strong className="font-semibold text-[#382630]">Paula</strong>.
-                Me gusta dar forma a ideas creativas y convertirlas en contenido
-                que conecte con las personas.
+                Soy graduada en{" "}
+                <strong className="font-semibold text-[#382630]">
+                  Marketing e Investigación de Mercados
+                </strong>{" "}
+                y especializada en{" "}
+                <strong className="font-semibold text-[#382630]">
+                  Marketing Digital
+                </strong>
+                . Me gusta combinar creatividad y estrategia para construir una
+                comunicación que tenga sentido, conecte con las personas y ayude
+                a las marcas a diferenciarse.
               </p>
 
               <p>
-                Para mí, el marketing es una mezcla de estrategia, creatividad y
-                atención a los pequeños detalles que hacen que una marca tenga
-                personalidad propia.
+                Disfruto especialmente dando vida a las ideas: pensar conceptos,
+                crear contenido, explorar nuevas formas de comunicar y cuidar
+                esos pequeños detalles que hacen que una marca tenga
+                personalidad.
+              </p>
+
+              <p>
+                Creo que las mejores ideas no surgen solo de ser creativa, sino
+                también de observar, escuchar, entender a las personas y saber
+                qué quieres conseguir.
               </p>
             </motion.div>
 
-            {/* =================================================
+            {/* =============================================
                 VALORES CREATIVOS
-            ================================================= */}
+            ============================================= */}
 
             <motion.div
               {...reveal(0.45)}
@@ -356,26 +356,32 @@ export default function About({ photoSrc }: AboutProps) {
               ))}
             </motion.div>
 
-            {/* FRASE FINAL */}
+            {/* =============================================
+                FRASE FINAL DE PAULA
+            ============================================= */}
 
             <motion.div
               {...reveal(0.55)}
-              className="mt-10 flex items-center gap-4"
+              className="mt-10 flex items-start gap-4"
             >
               <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#E94E8F] text-white">
                 <ArrowDownRight size={20} strokeWidth={1.8} />
               </div>
 
-              <p className="max-w-sm font-serif text-lg italic text-[#A45477] sm:text-xl">
-                Y esto es solo el principio.
+              <p className="max-w-md font-serif text-lg italic leading-relaxed text-[#A45477] sm:text-xl">
+                Pienso, creo, pruebo y vuelvo a imaginar.
+                <br />
+                <span className="font-semibold">
+                  Así entiendo el marketing.
+                </span>
               </p>
             </motion.div>
           </div>
         </div>
 
-        {/* ===================================================
+        {/* =============================================
             CIERRE DE SECCIÓN
-        =================================================== */}
+        ============================================= */}
 
         <motion.div
           {...reveal(0.1)}
