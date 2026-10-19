@@ -39,7 +39,9 @@ const creativeValues = [
    ABOUT
 ========================================================= */
 
-export default function About({ photoSrc }: AboutProps) {
+export default function About({
+  photoSrc = "/images/paula/retratopaula.webp",
+}: AboutProps) {
   const reduceMotion = useReducedMotion();
 
   const reveal = (delay = 0) => ({
@@ -160,7 +162,7 @@ export default function About({ photoSrc }: AboutProps) {
                 }}
                 className="absolute bottom-[8%] left-[11%] right-[13%] top-[7%] z-10 overflow-hidden rounded-[8px] bg-white p-3 shadow-[0_30px_70px_-30px_rgba(76,29,50,0.35)] sm:p-4"
               >
-                {/* FOTOGRAFÍA */}
+                {/* FOTOGRAFÍA DE PAULA */}
 
                 <div className="relative h-[84%] overflow-hidden bg-[#F6B5D0]">
                   {photoSrc ? (
@@ -292,9 +294,7 @@ export default function About({ photoSrc }: AboutProps) {
               </span>
             </motion.h2>
 
-            {/* =============================================
-                TEXTO REAL DE PAULA
-            ============================================= */}
+            {/* TEXTO REAL DE PAULA */}
 
             <motion.div
               {...reveal(0.32)}
@@ -328,9 +328,7 @@ export default function About({ photoSrc }: AboutProps) {
               </p>
             </motion.div>
 
-            {/* =============================================
-                VALORES CREATIVOS
-            ============================================= */}
+            {/* VALORES CREATIVOS */}
 
             <motion.div
               {...reveal(0.45)}
@@ -356,9 +354,7 @@ export default function About({ photoSrc }: AboutProps) {
               ))}
             </motion.div>
 
-            {/* =============================================
-                FRASE FINAL DE PAULA
-            ============================================= */}
+            {/* FRASE FINAL DE PAULA */}
 
             <motion.div
               {...reveal(0.55)}
@@ -379,9 +375,7 @@ export default function About({ photoSrc }: AboutProps) {
           </div>
         </div>
 
-        {/* =============================================
-            CIERRE DE SECCIÓN
-        ============================================= */}
+        {/* CIERRE DE SECCIÓN */}
 
         <motion.div
           {...reveal(0.1)}
