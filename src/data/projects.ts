@@ -4,16 +4,35 @@
 
 export type ProjectTheme = "peach" | "pink" | "lavender";
 
+export type GalleryImage = {
+  src: string;
+  title: string;
+  alt: string;
+};
+
+export type GalleryVideo = {
+  src: string;
+  title: string;
+  description: string;
+  poster?: string;
+};
+
+export type ProjectGalleryData = {
+  videos: GalleryVideo[];
+  carousel: GalleryImage[];
+  highlights: GalleryImage[];
+};
+
 export type PortfolioProject = {
   slug: string;
   number: string;
   title: string;
+  clientName?: string;
   category: string;
   description: string;
   tags: string[];
   theme: ProjectTheme;
 
-  // Archivos multimedia opcionales
   media: {
     image?: string;
     secondaryImage?: string;
@@ -21,16 +40,12 @@ export type PortfolioProject = {
     videoPoster?: string;
   };
 
-  // Activar únicamente cuando exista la ficha individual
   detailHref?: string;
+  gallery?: ProjectGalleryData;
 };
 
 /* =========================================================
-   PROYECTOS DESTACADOS
-
-   CONTENIDO PROVISIONAL:
-   Sustituir por los trabajos y descripciones
-   confirmados por Paula antes de publicar.
+   PROYECTOS
 ========================================================= */
 
 export const projects: PortfolioProject[] = [
@@ -38,49 +53,109 @@ export const projects: PortfolioProject[] = [
     slug: "guzzi",
     number: "01",
     title: "Guzzi",
-    category: "Social media · Contenido",
+    clientName: "Pizzería Guzzi Almerimar",
+    category: "Social Media · Contenido",
     description:
-      "Un espacio para presentar las ideas, las piezas de contenido y el trabajo de comunicación realizado para este proyecto.",
-    tags: ["Social Media", "Contenido creativo", "Comunicación"],
+      "Contenido, creatividad y comunicación para una pizzería con personalidad propia. Un proyecto en el que desarrollo ideas para redes sociales y creo contenido visual que conecta la identidad del negocio con sus productos, su historia y las tendencias del momento.",
+    tags: ["Contenido creativo", "Vídeo", "Social Media"],
     theme: "peach",
 
     media: {
-      // image: "/images/projects/guzzi/cover.webp",
-      // secondaryImage: "/images/projects/guzzi/detail.webp",
-      // video: "/videos/guzzi.mp4",
-      // videoPoster: "/images/projects/guzzi/poster.webp",
+      image: "/images/guzzi/Agosto%20PIZZA%20DEL%20MES.webp",
+      secondaryImage: "/images/guzzi/Fruto%20novela.webp",
+    },
+
+    detailHref: "/proyectos/guzzi",
+
+    gallery: {
+      /* ================================================
+         VÍDEOS OPTIMIZADOS
+      ================================================ */
+
+      videos: [
+        {
+          src: "/videos/guzzi/guzzi-25-aniversario.mp4",
+          title: "25 aniversario de Guzzi",
+          description:
+            "Pieza audiovisual conmemorativa del 25 aniversario de Pizzería Guzzi Almerimar.",
+          poster: "/images/guzzi/guzzi-25-aniversario-poster.webp",
+        },
+        {
+          src: "/videos/guzzi/guzzi-prosciutto.mp4",
+          title: "Pizza prosciutto",
+          description:
+            "Vídeo de producto que muestra el proceso de elaboración de la pizza prosciutto y su resultado final.",
+          poster: "/images/guzzi/guzzi-prosciutto-poster.webp",
+        },
+      ],
+
+      /* ================================================
+         CARRUSEL CREATIVO
+      ================================================ */
+
+      carousel: [
+        {
+          src: "/images/guzzi/carrusel/Cosas%20horribles%20que%20nos%20pasaron%20hoy%20-%201.webp",
+          title: "Publicación 1",
+          alt: "Primera imagen del carrusel creativo de Guzzi",
+        },
+        {
+          src: "/images/guzzi/carrusel/Cosas%20horribles%20que%20nos%20pasaron%20hoy%20-%202.webp",
+          title: "Publicación 2",
+          alt: "Segunda imagen del carrusel creativo de Guzzi",
+        },
+        {
+          src: "/images/guzzi/carrusel/Cosas%20horribles%20que%20nos%20pasaron%20hoy%20-%203.webp",
+          title: "Publicación 3",
+          alt: "Tercera imagen del carrusel creativo de Guzzi",
+        },
+        {
+          src: "/images/guzzi/carrusel/Cosas%20horribles%20que%20nos%20pasaron%20hoy%20-%204.webp",
+          title: "Publicación 4",
+          alt: "Cuarta imagen del carrusel creativo de Guzzi",
+        },
+        {
+          src: "/images/guzzi/carrusel/Cosas%20horribles%20que%20nos%20pasaron%20hoy%20-%205.webp",
+          title: "Publicación 5",
+          alt: "Quinta imagen del carrusel creativo de Guzzi",
+        },
+      ],
+
+      /* ================================================
+         PUBLICACIONES DESTACADAS
+      ================================================ */
+
+      highlights: [
+        {
+          src: "/images/guzzi/Fruto%20novela.webp",
+          title: "Frutinovela",
+          alt: "Publicación creativa de Frutinovela para Guzzi",
+        },
+        {
+          src: "/images/guzzi/Agosto%20PIZZA%20DEL%20MES.webp",
+          title: "Pizza del mes",
+          alt: "Publicación de la pizza del mes de agosto",
+        },
+      ],
     },
   },
+
+  /* =====================================================
+     ENMA PASTELERÍA
+     Pendiente de incorporar el contenido multimedia
+  ===================================================== */
 
   {
     slug: "enma",
     number: "02",
-    title: "ENMA",
-    category: "Creatividad · Branding",
+    title: "Enma",
+    clientName: "Enma Pastelería",
+    category: "Creación de contenido · Diseño",
     description:
-      "Aquí mostraremos el concepto visual del proyecto, los contenidos desarrollados y el proceso creativo detrás de las piezas seleccionadas.",
-    tags: ["Creatividad", "Identidad visual", "Contenido"],
+      "Creatividad y contenido para dar visibilidad a una pastelería artesanal. Un proyecto centrado en crear contenido visual atractivo, comunicar los productos de la marca y adaptar las publicaciones a su personalidad. También permite explorar el rendimiento de las piezas y detectar cuáles generan más visibilidad.",
+    tags: ["Creación de contenido", "Diseño", "Redes sociales"],
     theme: "pink",
 
-    media: {
-      // image: "/images/projects/enma/cover.webp",
-      // secondaryImage: "/images/projects/enma/detail.webp",
-    },
-  },
-
-  {
-    slug: "wit",
-    number: "03",
-    title: "WIT Creativo",
-    category: "Estrategia · Campañas",
-    description:
-      "Un caso para presentar los objetivos de comunicación, las acciones de marketing y los resultados que Paula pueda documentar.",
-    tags: ["Estrategia", "Campañas", "Marketing digital"],
-    theme: "lavender",
-
-    media: {
-      // image: "/images/projects/wit/cover.webp",
-      // secondaryImage: "/images/projects/wit/detail.webp",
-    },
+    media: {},
   },
 ];

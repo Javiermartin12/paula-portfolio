@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
-  title: "Política de Privacidad | Paula",
+  title: "Política de Privacidad | Paula RM Marketing",
   description:
-    "Información sobre privacidad y protección de datos en el portfolio de Paula.",
+    "Información sobre protección de datos personales y uso del formulario de contacto de Paula RM Marketing.",
   robots: {
     index: false,
     follow: true,
@@ -16,15 +16,15 @@ export default function PrivacidadPage() {
   return (
     <main className="min-h-screen bg-[#FFF8F5] text-[#30202A]">
       <section className="mx-auto max-w-4xl px-5 py-20 sm:px-6 sm:py-24 lg:px-8">
+        {/* Navegación */}
         <Link
           href="/"
-          className="text-sm font-semibold text-[#D64C83] transition hover:text-[#A73566]"
+          className="inline-flex items-center gap-2 text-sm font-semibold text-[#D64C83] transition hover:text-[#A73566]"
         >
           ← Volver al portfolio
         </Link>
 
         {/* Encabezado */}
-
         <div className="mt-14">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#B45178]">
             Protección de datos
@@ -38,191 +38,297 @@ export default function PrivacidadPage() {
           </h1>
 
           <p className="mt-6 max-w-2xl text-base leading-8 text-[#806575]">
-            Esta política informa sobre el tratamiento de datos personales
-            relacionado con la navegación y las comunicaciones realizadas a
-            través del portfolio.
+            Información sobre cómo se recogen, utilizan y protegen los datos
+            personales facilitados a través de esta web.
           </p>
         </div>
 
         {/* Contenido */}
-
         <div className="mt-14 space-y-10">
           <PrivacySection title="1. Responsable del tratamiento">
             <p>
-              <strong>Responsable:</strong> Paula (apellidos pendientes de
-              confirmar).
+              <strong>Responsable:</strong> Paula Rodríguez Moreno, profesional
+              autónoma.
             </p>
 
-            <p className="mt-2">
-              <strong>Correo electrónico:</strong> Pendiente de confirmar.
+            <p className="mt-3">
+              <strong>Nombre comercial:</strong> Paula RM Marketing.
+            </p>
+
+            <p className="mt-3">
+              <strong>Correo electrónico:</strong>{" "}
+              <a
+                href="mailto:paularm.marketing@gmail.com"
+                className="font-semibold text-[#D64C83] hover:underline"
+              >
+                paularm.marketing@gmail.com
+              </a>
             </p>
 
             <p className="mt-4">
-              Los datos de identificación y contacto se completarán antes de la
-              publicación definitiva del sitio.
+              La información identificativa adicional de la titular está
+              disponible en el{" "}
+              <Link
+                href="/aviso-legal"
+                className="font-semibold text-[#D64C83] hover:underline"
+              >
+                Aviso Legal
+              </Link>
+              .
             </p>
           </PrivacySection>
 
-          <PrivacySection title="2. Datos que pueden tratarse">
+          <PrivacySection title="2. Datos personales que se recogen">
             <p>
-              En función de las interacciones de las personas visitantes, podrán
-              tratarse las siguientes categorías de datos personales:
+              A través del formulario de contacto se pueden recoger los
+              siguientes datos:
             </p>
 
             <ul className="mt-4 list-disc space-y-3 pl-6">
+              <li>Nombre facilitado por el visitante.</li>
+              <li>Dirección de correo electrónico.</li>
               <li>
-                Datos facilitados voluntariamente cuando una persona contacte
-                por correo electrónico.
-              </li>
-
-              <li>
-                Información incluida en consultas sobre proyectos,
-                colaboraciones u oportunidades profesionales.
-              </li>
-
-              <li>
-                Datos técnicos relacionados con la conexión, navegación y
-                seguridad, que puedan ser tratados por el proveedor de
-                alojamiento.
+                Información incluida voluntariamente en el mensaje o consulta.
               </li>
             </ul>
 
             <p className="mt-4">
-              Actualmente el portfolio no dispone de un formulario propio de
-              contacto ni solicita crear cuentas de usuario.
+              También pueden tratarse datos técnicos relacionados con el acceso,
+              la seguridad y el funcionamiento del sitio, de acuerdo con los
+              servicios utilizados.
+            </p>
+
+            <p className="mt-4">
+              Se recomienda no incluir información sensible o datos personales
+              innecesarios en los mensajes.
             </p>
           </PrivacySection>
 
           <PrivacySection title="3. Finalidades del tratamiento">
-            <p>Los datos podrán tratarse para:</p>
+            <p>
+              Los datos personales recibidos se utilizan para las siguientes
+              finalidades:
+            </p>
 
             <ul className="mt-4 list-disc space-y-3 pl-6">
               <li>
-                Responder comunicaciones y consultas recibidas voluntariamente.
+                Responder a las solicitudes de información recibidas mediante el
+                formulario.
               </li>
 
               <li>
-                Gestionar posibles colaboraciones y oportunidades profesionales.
+                Atender consultas sobre servicios de marketing, comunicación
+                digital y creación de contenido.
               </li>
 
               <li>
-                Atender solicitudes de información o propuestas relacionadas con
-                la actividad profesional.
+                Gestionar posibles propuestas de colaboración y contratación.
               </li>
 
               <li>
-                Mantener la seguridad y el correcto funcionamiento técnico del
-                sitio web.
+                Proteger el formulario frente a envíos automatizados,
+                fraudulentos o abusivos.
+              </li>
+
+              <li>
+                Garantizar el funcionamiento técnico y la seguridad del sitio
+                web.
               </li>
             </ul>
 
             <p className="mt-4">
-              No se utilizarán las comunicaciones recibidas para realizar envíos
-              publicitarios periódicos sin contar con una base jurídica
-              adecuada.
+              Los datos recibidos a través del formulario no se utilizarán para
+              enviar newsletters o comunicaciones comerciales periódicas por el
+              mero hecho de haber realizado una consulta.
             </p>
           </PrivacySection>
 
-          <PrivacySection title="4. Base jurídica">
+          <PrivacySection title="4. Base jurídica del tratamiento">
             <p>
-              La base jurídica dependerá de la finalidad concreta del
-              tratamiento.
+              El tratamiento de las consultas relacionadas con presupuestos o
+              posibles contrataciones puede basarse en la aplicación de medidas
+              precontractuales solicitadas por la persona interesada, conforme
+              al artículo 6.1.b del Reglamento General de Protección de Datos.
             </p>
 
             <p className="mt-4">
-              La atención de solicitudes profesionales podrá basarse en la
-              aplicación de medidas precontractuales cuando corresponda.
+              La atención de otras consultas profesionales y las medidas
+              necesarias para proteger el formulario y la seguridad de la web
+              pueden fundamentarse en el interés legítimo de la responsable,
+              cuando resulte aplicable, conforme al artículo 6.1.f del RGPD.
             </p>
 
             <p className="mt-4">
-              La gestión de consultas generales y la seguridad del sitio podrán
-              fundamentarse, cuando proceda, en el interés legítimo, respetando
-              los derechos de los interesados.
-            </p>
-
-            <p className="mt-4">
-              Cuando una finalidad requiera consentimiento, este se solicitará
-              previamente conforme a la normativa.
+              Cuando alguna actividad requiera consentimiento, se solicitará de
+              forma específica antes de realizar ese tratamiento.
             </p>
           </PrivacySection>
 
-          <PrivacySection title="5. Conservación de los datos">
+          <PrivacySection title="5. Carácter necesario de los datos">
             <p>
-              Los datos facilitados mediante comunicaciones se conservarán
-              durante el tiempo necesario para atenderlas y gestionar la
-              relación profesional correspondiente.
+              Los campos identificados como obligatorios en el formulario son
+              necesarios para gestionar y responder la consulta.
             </p>
 
             <p className="mt-4">
-              Cuando existan obligaciones legales aplicables, determinados datos
-              podrán conservarse durante los plazos exigidos.
-            </p>
-
-            <p className="mt-4">
-              Los registros técnicos del alojamiento estarán sujetos a los
-              plazos y condiciones aplicables al servicio contratado, que
-              deberán comprobarse antes de la publicación definitiva.
+              Si no se facilitan los datos requeridos, no será posible enviar el
+              formulario ni tramitar la solicitud por esa vía.
             </p>
           </PrivacySection>
 
-          <PrivacySection title="6. Proveedores y destinatarios">
+          <PrivacySection title="6. Proveedores tecnológicos">
             <p>
-              El portfolio está previsto para alojarse mediante Vercel, que
-              proporciona la infraestructura técnica necesaria para su
-              publicación y funcionamiento.
+              Para ofrecer el formulario y mantener la web operativa se utilizan
+              distintos servicios tecnológicos:
+            </p>
+
+            <ul className="mt-4 list-disc space-y-4 pl-6">
+              <li>
+                <strong>Vercel:</strong> alojamiento y ejecución de la
+                aplicación web, incluidos los componentes de servidor necesarios
+                para procesar las solicitudes.
+              </li>
+
+              <li>
+                <strong>Resend:</strong> servicio utilizado para enviar los
+                mensajes recibidos desde el formulario.
+              </li>
+
+              <li>
+                <strong>Google Gmail:</strong> servicio de correo electrónico
+                utilizado para recibir y responder las consultas.
+              </li>
+
+              <li>
+                <strong>Cloudflare Turnstile:</strong> servicio de verificación
+                destinado a prevenir envíos automatizados y proteger el
+                formulario.
+              </li>
+            </ul>
+
+            <p className="mt-4">
+              Estos proveedores pueden tratar información en la medida necesaria
+              para prestar sus respectivos servicios, con arreglo a sus
+              condiciones de tratamiento y protección de datos aplicables.
             </p>
 
             <p className="mt-4">
-              Determinados proveedores tecnológicos podrán tratar datos técnicos
-              en la medida necesaria para prestar sus servicios, conforme a las
-              condiciones contractuales y garantías aplicables.
-            </p>
-
-            <p className="mt-4">
-              También podrán intervenir los proveedores de correo o redes
-              sociales elegidos por las personas usuarias al contactar mediante
-              servicios externos.
+              La información relativa a la protección de datos de Cloudflare
+              está disponible en su{" "}
+              <a
+                href="https://www.cloudflare.com/privacypolicy/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-[#D64C83] hover:underline"
+              >
+                política de privacidad
+              </a>
+              .
             </p>
           </PrivacySection>
 
-          <PrivacySection title="7. Transferencias internacionales">
+          <PrivacySection title="7. Destinatarios y comunicaciones">
             <p>
-              Algunos proveedores tecnológicos pueden realizar tratamientos o
-              transferencias de datos fuera del Espacio Económico Europeo.
+              Los datos proporcionados mediante el formulario se utilizan para
+              atender la comunicación recibida.
             </p>
 
             <p className="mt-4">
-              Cuando resulten aplicables, deberán existir las garantías
-              previstas en la normativa de protección de datos.
+              No está prevista su comunicación a terceros para finalidades
+              comerciales ajenas a la solicitud.
             </p>
 
             <p className="mt-4">
-              La información sobre proveedores, ubicaciones y garantías deberá
-              contrastarse con las condiciones reales de los servicios
-              utilizados.
+              Los proveedores tecnológicos necesarios para gestionar los
+              mensajes y mantener el sitio web pueden acceder a determinados
+              datos en los términos de sus servicios.
+            </p>
+
+            <p className="mt-4">
+              También podrán producirse comunicaciones cuando exista una
+              obligación legal.
             </p>
           </PrivacySection>
 
-          <PrivacySection title="8. Derechos de las personas">
+          <PrivacySection title="8. Transferencias internacionales">
             <p>
-              Las personas interesadas podrán solicitar, cuando corresponda, el
-              acceso, rectificación, supresión, oposición, limitación del
-              tratamiento y portabilidad de sus datos personales.
+              Algunos proveedores tecnológicos pueden tratar datos personales
+              fuera del Espacio Económico Europeo.
             </p>
 
             <p className="mt-4">
-              También podrán retirar los consentimientos otorgados, cuando el
-              tratamiento se base en ellos.
+              Cuando se produzcan transferencias internacionales, deberán
+              aplicarse las garantías exigidas por el Reglamento General de
+              Protección de Datos, conforme a las condiciones vigentes de los
+              proveedores correspondientes.
             </p>
 
             <p className="mt-4">
-              Estas solicitudes podrán dirigirse al correo de contacto de la
-              titular, que se incorporará al portfolio antes de su publicación
-              definitiva.
+              La información concreta sobre las ubicaciones, los mecanismos de
+              transferencia y las garantías aplicables debe contrastarse con la
+              documentación contractual de cada proveedor.
+            </p>
+          </PrivacySection>
+
+          <PrivacySection title="9. Plazo de conservación">
+            <p>
+              Los datos de las consultas se conservarán durante el tiempo
+              necesario para atender la solicitud y realizar el seguimiento de
+              la comunicación profesional.
             </p>
 
             <p className="mt-4">
-              Asimismo, podrá presentarse una reclamación ante la{" "}
+              Cuando de una consulta derive una relación contractual, podrán
+              conservarse los datos necesarios durante los plazos aplicables a
+              esa relación.
+            </p>
+
+            <p className="mt-4">
+              Asimismo, determinados datos podrán conservarse durante el tiempo
+              necesario para atender obligaciones legales o posibles
+              responsabilidades.
+            </p>
+
+            <p className="mt-4">
+              Los datos técnicos de seguridad estarán sujetos a los criterios de
+              conservación asociados a los servicios utilizados.
+            </p>
+          </PrivacySection>
+
+          <PrivacySection title="10. Derechos de las personas interesadas">
+            <p>
+              Las personas interesadas pueden ejercer, cuando corresponda, sus
+              derechos de:
+            </p>
+
+            <ul className="mt-4 list-disc space-y-3 pl-6">
+              <li>Acceso a sus datos personales.</li>
+              <li>Rectificación de datos inexactos.</li>
+              <li>Supresión de sus datos.</li>
+              <li>Oposición al tratamiento.</li>
+              <li>Limitación del tratamiento.</li>
+              <li>Portabilidad de los datos.</li>
+            </ul>
+
+            <p className="mt-4">
+              Cuando el tratamiento se base en el consentimiento, este podrá
+              retirarse en cualquier momento, sin afectar a la licitud del
+              tratamiento anterior.
+            </p>
+
+            <p className="mt-4">
+              Para ejercer estos derechos puede enviarse una solicitud a{" "}
+              <a
+                href="mailto:paularm.marketing@gmail.com"
+                className="font-semibold text-[#D64C83] hover:underline"
+              >
+                paularm.marketing@gmail.com
+              </a>
+              .
+            </p>
+
+            <p className="mt-4">
+              También puede presentarse una reclamación ante la{" "}
               <a
                 href="https://www.aepd.es/"
                 target="_blank"
@@ -235,10 +341,11 @@ export default function PrivacidadPage() {
             </p>
           </PrivacySection>
 
-          <PrivacySection title="9. Cookies">
+          <PrivacySection title="11. Cookies y tecnologías similares">
             <p>
-              Para obtener información sobre las cookies y tecnologías similares
-              utilizadas en el sitio puede consultarse la{" "}
+              La información sobre las cookies y tecnologías similares
+              utilizadas en la navegación y funcionamiento de la web se
+              encuentra disponible en la{" "}
               <Link
                 href="/cookies"
                 className="font-semibold text-[#D64C83] hover:underline"
@@ -249,23 +356,40 @@ export default function PrivacidadPage() {
             </p>
           </PrivacySection>
 
-          <PrivacySection title="10. Seguridad">
+          <PrivacySection title="12. Seguridad de los datos">
             <p>
-              Se aplicarán medidas técnicas y organizativas adecuadas a la
-              naturaleza de los tratamientos y a los riesgos identificados.
+              Se aplican medidas técnicas orientadas a proteger las
+              comunicaciones y el funcionamiento del formulario.
+            </p>
+
+            <p className="mt-4">
+              El formulario utiliza Cloudflare Turnstile como mecanismo de
+              protección frente a envíos automatizados, y el servicio de correo
+              se gestiona desde el servidor, sin exponer las claves privadas en
+              el navegador.
+            </p>
+
+            <p className="mt-4">
+              Ningún sistema conectado a Internet puede garantizar una seguridad
+              absoluta.
             </p>
           </PrivacySection>
 
-          <PrivacySection title="11. Actualizaciones">
+          <PrivacySection title="13. Modificaciones de la política">
             <p>
-              Esta política podrá modificarse cuando cambien los servicios, las
-              funcionalidades o las operaciones de tratamiento.
+              Esta política podrá actualizarse cuando se modifiquen los
+              servicios tecnológicos, las funcionalidades del sitio o las
+              operaciones de tratamiento de datos.
             </p>
 
-            <p className="mt-4 text-sm text-[#A77B8D]">
-              Última actualización: octubre de 2026.
+            <p className="mt-4">
+              La versión vigente estará disponible en esta misma página.
             </p>
           </PrivacySection>
+
+          <p className="border-t border-[#EBCDD9] pt-7 text-sm text-[#A77B8D]">
+            Última actualización: octubre de 2026.
+          </p>
         </div>
       </section>
     </main>

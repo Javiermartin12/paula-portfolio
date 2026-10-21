@@ -5,41 +5,63 @@ export type EducationItem = {
   period?: string;
   description?: string;
   credentialUrl?: string;
+  image?: string;
+  imageAlt?: string;
 };
 
 /* =========================================================
    FORMACIÓN ACADÉMICA
-   Añadir únicamente estudios confirmados por Paula
 ========================================================= */
 
-export const studies: EducationItem[] = [];
+export const studies: EducationItem[] = [
+  {
+    id: "grado-marketing",
+    title: "Grado en Marketing e Investigación de Mercados",
+    institution: "Universidad de Granada",
+    description:
+      "Formación universitaria en marketing e investigación de mercados.",
+  },
 
-/*
-Ejemplo de estructura:
-
-{
-  id: "estudio-1",
-  title: "Nombre de la titulación",
-  institution: "Universidad o centro",
-  period: "2022 – 2026",
-  description: "Especialización o información relevante",
-},
-*/
+  {
+    id: "master-marketing-digital",
+    title: "Máster Profesional en Marketing Digital",
+    institution: "Formación vinculada a SIDN e IDENTO",
+    description:
+      "Especialización práctica en marketing digital, estrategia, contenidos, posicionamiento y entornos de comunicación online.",
+    credentialUrl: "/images/paula/foto_master_paula.webp",
+  },
+];
 
 /* =========================================================
-   CURSOS Y CERTIFICACIONES
+   CERTIFICACIONES COMPLEMENTARIAS
 ========================================================= */
 
-export const certifications: EducationItem[] = [];
+export const certifications: EducationItem[] = [
+  {
+    id: "hubspot-seo",
+    title: "SEO y optimización",
+    institution: "HubSpot Academy",
+    credentialUrl: "/certificados/hubspot-seo.webp",
+  },
 
-/*
-Ejemplo de estructura:
+  {
+    id: "hubspot-redes-sociales",
+    title: "Marketing en Redes Sociales",
+    institution: "HubSpot Academy",
+    credentialUrl: "/certificados/hubspot-redes-sociales.webp",
+  },
 
-{
-  id: "certificado-1",
-  title: "Nombre del certificado",
-  institution: "Entidad emisora",
-  period: "2026",
-  credentialUrl: "https://...",
-},
-*/
+  {
+    id: "santander-storytelling",
+    title: "Storytelling en Marketing Digital",
+    institution: "Santander Open Academy",
+    credentialUrl: "/certificados/santander-storytelling.pdf",
+  },
+
+  {
+    id: "santander-business-english",
+    title: "Business English, Part 1",
+    institution: "Santander Open Academy",
+    credentialUrl: "/certificados/santander-business-english.pdf",
+  },
+];

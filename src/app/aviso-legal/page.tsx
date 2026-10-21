@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
-  title: "Aviso legal | Paula",
+  title: "Aviso legal | Paula RM Marketing",
   description:
-    "Información legal y condiciones de utilización del portfolio de Paula.",
+    "Información legal, titularidad y condiciones de uso de la web profesional de Paula RM Marketing.",
   robots: {
     index: false,
     follow: true,
@@ -16,8 +16,7 @@ export default function AvisoLegalPage() {
   return (
     <main className="min-h-screen bg-[#FFF8F5] text-[#30202A]">
       <section className="mx-auto max-w-4xl px-5 py-20 sm:px-6 sm:py-24 lg:px-8">
-        {/* Volver */}
-
+        {/* Navegación */}
         <Link
           href="/"
           className="inline-flex items-center gap-2 text-sm font-semibold text-[#D64C83] transition hover:text-[#A73566]"
@@ -26,7 +25,6 @@ export default function AvisoLegalPage() {
         </Link>
 
         {/* Encabezado */}
-
         <div className="mt-14">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#B45178]">
             Información legal
@@ -40,116 +38,164 @@ export default function AvisoLegalPage() {
           </h1>
 
           <p className="mt-6 max-w-2xl text-base leading-8 text-[#806575]">
-            Información sobre la titularidad, finalidad y condiciones generales
-            de utilización de este portfolio.
+            Información relativa a la titularidad de este sitio web, su
+            actividad profesional y las condiciones generales de utilización.
           </p>
         </div>
 
-        {/* Contenido */}
-
+        {/* Contenido legal */}
         <div className="mt-14 space-y-10">
           <LegalSection title="1. Identificación de la titular">
             <p>
-              Este sitio web corresponde al portfolio personal y profesional de
-              Paula.
+              En cumplimiento de la Ley 34/2002, de 11 de julio, de Servicios de
+              la Sociedad de la Información y de Comercio Electrónico, se
+              facilita la siguiente información:
             </p>
 
-            <div className="mt-5 space-y-2">
+            <div className="mt-5 space-y-3">
               <p>
-                <strong>Titular:</strong> Paula (apellidos pendientes de
-                confirmar).
+                <strong>Nombre:</strong> Paula Rodríguez Moreno
               </p>
 
               <p>
-                <strong>Correo de contacto:</strong> Pendiente de confirmar.
+                <strong>Nombre comercial:</strong> Paula RM Marketing
               </p>
 
               <p>
-                <strong>Datos profesionales y fiscales:</strong> Pendientes de
-                completar cuando correspondan según la actividad desarrollada.
+                <strong>Actividad:</strong> Servicios profesionales de
+                marketing, comunicación digital y creación de contenido.
+              </p>
+
+              <p>
+                <strong>NIF:</strong> 54202901C
+              </p>
+
+              <p>
+                <strong>Domicilio profesional:</strong> Calle Velero 9,
+                Almerimar.
+              </p>
+
+              <p>
+                <strong>Correo electrónico:</strong>{" "}
+                <a
+                  href="mailto:paularm.marketing@gmail.com"
+                  className="font-semibold text-[#D64C83] hover:underline"
+                >
+                  paularm.marketing@gmail.com
+                </a>
+              </p>
+
+              <p>
+                <strong>Sitio web:</strong>{" "}
+                <a
+                  href="https://paularmmarketing.com"
+                  className="font-semibold text-[#D64C83] hover:underline"
+                >
+                  paularmmarketing.com
+                </a>
               </p>
             </div>
-
-            <p className="mt-5">
-              Antes de la publicación definitiva, se completarán los datos
-              identificativos exigibles según la finalidad y naturaleza de la
-              actividad.
-            </p>
           </LegalSection>
 
-          <LegalSection title="2. Finalidad del sitio web">
+          <LegalSection title="2. Objeto y finalidad del sitio web">
             <p>
-              El sitio tiene como finalidad presentar el perfil profesional de
-              Paula, su trayectoria, formación, habilidades y proyectos
-              relacionados con el marketing, la comunicación y la creación de
-              contenido.
+              Este sitio web tiene como finalidad presentar los servicios
+              profesionales de marketing, comunicación digital y creación de
+              contenido ofrecidos por su titular.
             </p>
 
             <p className="mt-4">
-              También podrá facilitar vías de contacto para oportunidades
-              profesionales, colaboraciones y consultas relacionadas con su
-              actividad.
+              También permite consultar su trayectoria, experiencia, proyectos y
+              trabajos realizados, así como solicitar información sobre
+              servicios, propuestas de colaboración y oportunidades
+              profesionales.
             </p>
           </LegalSection>
 
-          <LegalSection title="3. Propiedad intelectual">
+          <LegalSection title="3. Propiedad intelectual e industrial">
             <p>
-              Los textos, composiciones gráficas, elementos de diseño y demás
-              contenidos originales del sitio están protegidos por la normativa
-              de propiedad intelectual que resulte aplicable.
+              Los textos, diseños, composiciones gráficas, fotografías, vídeos y
+              demás contenidos originales de este sitio web están protegidos por
+              la legislación aplicable en materia de propiedad intelectual e
+              industrial.
             </p>
 
             <p className="mt-4">
-              Las fotografías, vídeos, logotipos, marcas y piezas de terceros
-              pertenecen a sus respectivos titulares. Su inclusión en el
-              portfolio deberá contar con las autorizaciones o derechos de
-              utilización correspondientes.
+              Los logotipos, marcas, fotografías y materiales pertenecientes a
+              terceros conservan sus respectivos derechos de propiedad.
             </p>
 
             <p className="mt-4">
-              La reproducción o utilización de contenidos protegidos deberá
-              respetar los derechos de sus titulares.
+              Su presencia en el portfolio tiene como finalidad mostrar
+              proyectos y trabajos profesionales, siempre con respeto a los
+              derechos de sus titulares y a las autorizaciones de uso
+              correspondientes.
+            </p>
+
+            <p className="mt-4">
+              La reproducción, distribución, transformación o utilización de
+              contenidos protegidos deberá contar con la autorización
+              correspondiente, salvo en los casos permitidos legalmente.
             </p>
           </LegalSection>
 
-          <LegalSection title="4. Utilización del sitio web">
+          <LegalSection title="4. Condiciones de utilización">
             <p>
-              Las personas visitantes se comprometen a utilizar el sitio web de
-              forma lícita, respetando los derechos de terceros y evitando
-              actuaciones que puedan perjudicar su funcionamiento o seguridad.
-            </p>
-          </LegalSection>
-
-          <LegalSection title="5. Enlaces externos">
-            <p>
-              Este portfolio puede incluir enlaces a redes sociales, campañas,
-              proyectos y páginas de terceros.
+              Las personas usuarias se comprometen a utilizar este sitio web de
+              manera lícita, respetando los derechos de terceros y evitando
+              actividades que puedan comprometer su seguridad, disponibilidad o
+              funcionamiento.
             </p>
 
             <p className="mt-4">
-              El acceso a dichos sitios se realiza bajo las condiciones y
-              políticas establecidas por sus respectivos titulares. La presencia
-              de un enlace no supone necesariamente una vinculación comercial.
+              No se permite utilizar sus formularios o medios de contacto para
+              enviar comunicaciones fraudulentas, abusivas o contrarias a la
+              legislación aplicable.
             </p>
           </LegalSection>
 
-          <LegalSection title="6. Disponibilidad y actualizaciones">
+          <LegalSection title="5. Enlaces a terceros">
             <p>
-              Se procurará mantener el sitio web accesible y actualizado. No
-              obstante, pueden producirse interrupciones temporales por
-              mantenimiento o incidencias técnicas.
+              El sitio web puede contener enlaces a redes sociales, páginas de
+              clientes, campañas, proyectos y otros recursos externos.
             </p>
 
             <p className="mt-4">
-              El contenido podrá modificarse para reflejar nuevos proyectos,
-              experiencias o información profesional.
+              Estos servicios disponen de sus propias condiciones de uso y
+              políticas de privacidad. La titular no controla sus contenidos ni
+              sus posibles modificaciones.
+            </p>
+          </LegalSection>
+
+          <LegalSection title="6. Disponibilidad y mantenimiento">
+            <p>
+              Se procurará mantener la web accesible, actualizada y en correcto
+              funcionamiento.
+            </p>
+
+            <p className="mt-4">
+              Podrán producirse interrupciones temporales por mantenimiento,
+              actualizaciones o incidencias técnicas ajenas al control de la
+              titular.
+            </p>
+
+            <p className="mt-4">
+              Los contenidos podrán actualizarse para reflejar nuevos servicios,
+              proyectos o información profesional.
             </p>
           </LegalSection>
 
           <LegalSection title="7. Protección de datos">
             <p>
-              Para conocer cómo se tratan los datos personales relacionados con
-              este portfolio puede consultarse la{" "}
+              Los datos personales facilitados a través del formulario de
+              contacto se tratarán conforme a la normativa de protección de
+              datos.
+            </p>
+
+            <p className="mt-4">
+              La información relativa a las finalidades, legitimación,
+              destinatarios y derechos de las personas interesadas se encuentra
+              disponible en la{" "}
               <Link
                 href="/privacidad"
                 className="font-semibold text-[#D64C83] hover:underline"
@@ -160,11 +206,26 @@ export default function AvisoLegalPage() {
             </p>
           </LegalSection>
 
-          <LegalSection title="8. Legislación aplicable">
+          <LegalSection title="8. Cookies y tecnologías similares">
+            <p>
+              La información sobre las cookies y otras tecnologías utilizadas en
+              esta web puede consultarse en la{" "}
+              <Link
+                href="/cookies"
+                className="font-semibold text-[#D64C83] hover:underline"
+              >
+                Política de Cookies
+              </Link>
+              .
+            </p>
+          </LegalSection>
+
+          <LegalSection title="9. Legislación aplicable">
             <p>
               Este sitio web se rige por la normativa española y europea que
-              resulte aplicable en materia de servicios digitales, propiedad
-              intelectual y protección de datos personales.
+              resulte aplicable, especialmente en materia de servicios de la
+              sociedad de la información, propiedad intelectual y protección de
+              datos personales.
             </p>
           </LegalSection>
 
