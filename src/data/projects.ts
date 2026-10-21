@@ -45,7 +45,7 @@ export type PortfolioProject = {
 };
 
 /* =========================================================
-   PROYECTOS
+   01. PIZZERÍA GUZZI ALMERIMAR
 ========================================================= */
 
 export const projects: PortfolioProject[] = [
@@ -68,10 +68,6 @@ export const projects: PortfolioProject[] = [
     detailHref: "/proyectos/guzzi",
 
     gallery: {
-      /* ================================================
-         VÍDEOS OPTIMIZADOS
-      ================================================ */
-
       videos: [
         {
           src: "/videos/guzzi/guzzi-25-aniversario.mp4",
@@ -88,10 +84,6 @@ export const projects: PortfolioProject[] = [
           poster: "/images/guzzi/guzzi-prosciutto-poster.webp",
         },
       ],
-
-      /* ================================================
-         CARRUSEL CREATIVO
-      ================================================ */
 
       carousel: [
         {
@@ -121,10 +113,6 @@ export const projects: PortfolioProject[] = [
         },
       ],
 
-      /* ================================================
-         PUBLICACIONES DESTACADAS
-      ================================================ */
-
       highlights: [
         {
           src: "/images/guzzi/Fruto%20novela.webp",
@@ -140,10 +128,9 @@ export const projects: PortfolioProject[] = [
     },
   },
 
-  /* =====================================================
-     ENMA PASTELERÍA
-     Pendiente de incorporar el contenido multimedia
-  ===================================================== */
+  /* =========================================================
+     02. ENMA PASTELERÍA
+  ========================================================= */
 
   {
     slug: "enma",
@@ -156,6 +143,61 @@ export const projects: PortfolioProject[] = [
     tags: ["Creación de contenido", "Diseño", "Redes sociales"],
     theme: "pink",
 
-    media: {},
+    media: {
+      image: "/images/enma/enma-palmeras.webp",
+    },
+
+    detailHref: "/proyectos/enma",
+
+    gallery: {
+      /* ================================================
+         REELS Y CONTENIDO AUDIOVISUAL
+      ================================================ */
+
+      videos: [
+        {
+          src: "/videos/enma/enma-love-language.mp4",
+          title: "Love Language",
+          description:
+            "Reel de contenido creativo para redes sociales de Enma Pastelería.",
+          poster: "/images/enma/enma-love-language-poster.webp",
+        },
+
+        {
+          src: "/videos/enma/enma-pan-de-aceite.mp4",
+          title: "IA · Pan de aceite",
+          description:
+            "Pieza audiovisual creativa relacionada con el pan de aceite y la comunicación digital de la marca.",
+          poster: "/images/enma/enma-pan-de-aceite-poster.webp",
+        },
+
+        {
+          src: "/videos/enma/enma-eventos.mp4",
+          title: "Eventos importantes",
+          description:
+            "Reel de contenido para comunicar productos y ocasiones especiales de Enma Pastelería.",
+          poster: "/images/enma/enma-eventos-poster.webp",
+        },
+      ],
+
+      /* ================================================
+         CARRUSELES
+         Pendientes de recibir más imágenes
+      ================================================ */
+
+      carousel: [],
+
+      /* ================================================
+         PUBLICACIONES DESTACADAS
+      ================================================ */
+
+      highlights: [
+        {
+          src: "/images/enma/enma-palmeras.webp",
+          title: "Palmeras artesanales",
+          alt: "Publicación de palmeras de Enma Pastelería",
+        },
+      ],
+    },
   },
 ];
