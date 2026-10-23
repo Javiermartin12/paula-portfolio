@@ -5,7 +5,7 @@ import { useState } from "react";
 
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 
-import { ArrowUpRight, Flower2, Menu, X } from "lucide-react";
+import { ArrowUpRight, Lightbulb, Menu, X } from "lucide-react";
 
 /* =========================================================
    NAVEGACIÓN
@@ -53,7 +53,7 @@ export default function Header() {
             PAULA
           </span>
 
-          <Flower2
+          <Lightbulb
             size={23}
             strokeWidth={1.7}
             className="text-[#E94E8F] transition-transform duration-500 group-hover:rotate-45"
@@ -168,7 +168,11 @@ export default function Header() {
                 Explora mi mundo
               </span>
 
-              <Flower2 size={19} strokeWidth={1.7} className="text-[#E94E8F]" />
+              <Lightbulb
+                size={19}
+                strokeWidth={1.7}
+                className="text-[#E94E8F]"
+              />
             </div>
 
             {/* ENLACES */}

@@ -5,7 +5,7 @@ import Link from "next/link";
 
 import { motion, useReducedMotion } from "motion/react";
 
-import { ArrowUpRight, Flower2, Sparkles } from "lucide-react";
+import { ArrowUpRight, Lightbulb, Sparkles } from "lucide-react";
 
 import {
   projects,
@@ -184,7 +184,7 @@ function ProjectVisual({
           Concept · Content · Creativity
         </span>
 
-        <Flower2 size={20} strokeWidth={1.6} className={theme.text} />
+        <Lightbulb size={20} strokeWidth={1.6} className={theme.text} />
       </div>
     </div>
   );

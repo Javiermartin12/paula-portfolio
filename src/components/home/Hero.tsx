@@ -12,7 +12,7 @@ import {
   ArrowDownRight,
   ArrowUpRight,
   Camera,
-  Flower2,
+  Lightbulb,
   Sparkles,
 } from "lucide-react";
 
@@ -308,7 +308,7 @@ export default function Hero() {
                 }}
                 className="absolute right-[3%] top-[1%] z-30 flex h-20 w-20 items-center justify-center rounded-full border-4 border-[#FFF8F5] bg-[#F8D46B] shadow-lg sm:h-28 sm:w-28"
               >
-                <Flower2
+                <Lightbulb
                   size={43}
                   strokeWidth={1.6}
                   className="text-[#D64A79] sm:h-14 sm:w-14"

@@ -7,7 +7,7 @@ import { motion, useReducedMotion } from "motion/react";
 
 import {
   ArrowUpRight,
-  Flower2,
+  Lightbulb,
   Heart,
   Mail,
   Sparkles,
@@ -134,7 +134,11 @@ export default function ContactCTA({
             aria-hidden="true"
             className="absolute -right-10 -top-12 rotate-12 opacity-25 sm:right-7 sm:top-7"
           >
-            <Flower2 size={170} strokeWidth={0.7} className="text-[#F5A0C5]" />
+            <Lightbulb
+              size={170}
+              strokeWidth={0.7}
+              className="text-[#F5A0C5]"
+            />
           </div>
 
           {/* Presentación */}

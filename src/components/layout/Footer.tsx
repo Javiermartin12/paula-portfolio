@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUp, Flower2 } from "lucide-react";
+import { ArrowUp, Lightbulb } from "lucide-react";
 
 /* =========================================================
    ENLACES LEGALES
@@ -47,7 +47,11 @@ export default function Footer() {
                 PAULA
               </span>
 
-              <Flower2 size={25} strokeWidth={1.8} className="text-[#F19ABD]" />
+              <Lightbulb
+                size={25}
+                strokeWidth={1.8}
+                className="text-[#F19ABD]"
+              />
             </Link>
 
             {/* DESCRIPCIÓN */}

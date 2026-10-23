@@ -3,7 +3,13 @@
 import Image from "next/image";
 import { motion, useReducedMotion } from "motion/react";
 
-import { ArrowDownRight, Camera, Flower2, Heart, Sparkles } from "lucide-react";
+import {
+  ArrowDownRight,
+  Camera,
+  Lightbulb,
+  Heart,
+  Sparkles,
+} from "lucide-react";
 
 /* =========================================================
    PROPS
@@ -101,7 +107,7 @@ export default function About({
 
           <span className="h-px w-16 bg-[#DB9AB5]" />
 
-          <Flower2 size={18} strokeWidth={1.7} className="text-[#E94E8F]" />
+          <Lightbulb size={18} strokeWidth={1.7} className="text-[#E94E8F]" />
         </motion.div>
 
         {/* COMPOSICIÓN PRINCIPAL */}
@@ -227,7 +233,7 @@ export default function About({
                 }}
                 className="absolute right-[1%] top-[1%] z-20 flex h-20 w-20 items-center justify-center rounded-full border-4 border-[#FFF0F5] bg-[#F6D46C] shadow-lg sm:h-28 sm:w-28"
               >
-                <Flower2
+                <Lightbulb
                   size={43}
                   strokeWidth={1.5}
                   className="text-[#BE4F79] sm:h-14 sm:w-14"
