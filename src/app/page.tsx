@@ -16,13 +16,47 @@ import ContactCTA from "@/components/home/ContactCTA";
 import { paulaProfile } from "@/data/profile";
 
 /* =========================================================
-   METADATOS
+   SEO DE LA HOME
 ========================================================= */
 
+const title = "Paula RM Marketing | Marketing digital y contenido creativo";
+
+const description =
+  "Portfolio de Paula RM Marketing. Marketing digital, creación de contenido, diseño y Social Media. Descubre sus proyectos y experiencia profesional.";
+
 export const metadata: Metadata = {
-  title: "Paula | Marketing, creatividad y contenido",
-  description:
-    "Portfolio creativo de Paula. Marketing, estrategia, contenido digital, experiencia profesional y proyectos.",
+  title: {
+    absolute: title,
+  },
+
+  description,
+
+  alternates: {
+    canonical: "/",
+  },
+
+  openGraph: {
+    type: "website",
+    locale: "es_ES",
+    url: "/",
+    siteName: "Paula RM Marketing",
+    title,
+    description,
+
+    images: [
+      {
+        url: "/opengraph-image.png",
+        alt: "Paula RM Marketing",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/opengraph-image.png"],
+  },
 };
 
 /* =========================================================
@@ -35,32 +69,32 @@ export default function HomePage() {
       <Header />
 
       <main>
-        {/* 01. PRESENTACIÓN */}
+        {/* PRESENTACIÓN */}
         <Hero />
 
-        {/* 02. SOBRE MÍ */}
+        {/* SOBRE MÍ */}
         <About photoSrc={paulaProfile.portrait || undefined} />
 
-        {/* 03. MI MUNDO CREATIVO */}
+        {/* MI MUNDO CREATIVO */}
         <CreativeWorld
           photoSrc={paulaProfile.creativePhoto || undefined}
           videoSrc={paulaProfile.creativeVideo || undefined}
           videoPoster={paulaProfile.creativeVideoPoster || undefined}
         />
 
-        {/* 04. HERRAMIENTAS */}
+        {/* HERRAMIENTAS */}
         <Toolbox />
 
-        {/* 05. PROYECTOS DESTACADOS */}
+        {/* PROYECTOS */}
         <SelectedProjects />
 
-        {/* 06. EXPERIENCIA PROFESIONAL */}
+        {/* EXPERIENCIA PROFESIONAL */}
         <Experience />
 
-        {/* 07. FORMACIÓN Y CERTIFICACIONES */}
+        {/* FORMACIÓN Y CERTIFICACIONES */}
         <Education />
 
-        {/* 08. DETRÁS DE LAS CÁMARAS */}
+        {/* DETRÁS DE LAS CÁMARAS */}
         <BehindTheScenes
           images={{
             ideas: paulaProfile.behindImages.ideas || undefined,
@@ -69,7 +103,7 @@ export default function HomePage() {
           }}
         />
 
-        {/* 09. CONTACTO */}
+        {/* CONTACTO */}
         <ContactCTA
           email={paulaProfile.email || undefined}
           instagramUrl={paulaProfile.instagramUrl || undefined}

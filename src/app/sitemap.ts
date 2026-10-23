@@ -1,19 +1,27 @@
 ﻿import type { MetadataRoute } from "next";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const url =
-    process.env.SITE_URL ||
-    (process.env.VERCEL_PROJECT_PRODUCTION_URL
-      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-      : "http://localhost:3000");
+import { projects } from "@/data/projects";
 
-  const siteUrl = url.replace(/\/+$/, "");
+const SITE_URL = "https://paularmmarketing.com";
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const projectPages = projects
+    .filter(
+      (project) => Boolean(project.detailHref) && Boolean(project.gallery),
+    )
+    .map((project) => ({
+      url: `${SITE_URL}${project.detailHref}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    }));
 
   return [
     {
-      url: `${siteUrl}/`,
+      url: SITE_URL,
       changeFrequency: "monthly",
       priority: 1,
     },
+
+    ...projectPages,
   ];
 }

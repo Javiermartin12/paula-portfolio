@@ -6,7 +6,21 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 /* =========================================================
-   FUENTES
+   CONFIGURACIÓN GENERAL
+========================================================= */
+
+const SITE_URL = "https://paularmmarketing.com";
+
+const SITE_NAME = "Paula RM Marketing";
+
+const SITE_TITLE =
+  "Paula RM Marketing | Marketing digital y contenido creativo";
+
+const SITE_DESCRIPTION =
+  "Portfolio de Paula RM Marketing. Marketing digital, creación de contenido, diseño y Social Media. Descubre sus proyectos y experiencia profesional.";
+
+/* =========================================================
+   TIPOGRAFÍAS
 ========================================================= */
 
 const geistSans = Geist({
@@ -22,49 +36,47 @@ const geistMono = Geist_Mono({
 });
 
 /* =========================================================
-   METADATOS GENERALES
+   METADATOS GENERALES Y SEO
 ========================================================= */
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.SITE_URL ??
-      (process.env.VERCEL_PROJECT_PRODUCTION_URL
-        ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-        : "http://localhost:3000"),
-  ),
-  applicationName: "Paula Portfolio",
+  metadataBase: new URL(SITE_URL),
 
-  title: "Paula | Marketing, creatividad y contenido",
+  applicationName: SITE_NAME,
 
-  description:
-    "Portfolio creativo de Paula. Marketing digital, estrategia, creación de contenido y proyectos de comunicación para marcas y negocios.",
+  title: {
+    default: SITE_TITLE,
+    template: `%s | ${SITE_NAME}`,
+  },
 
-  keywords: [
-    "Paula",
-    "Marketing digital",
-    "Portfolio de marketing",
-    "Creación de contenido",
-    "Social Media",
-    "Estrategia digital",
-    "Creatividad",
-    "Comunicación digital",
+  description: SITE_DESCRIPTION,
+
+  authors: [
+    {
+      name: "Paula RM Marketing",
+      url: SITE_URL,
+    },
   ],
+
+  creator: "Paula RM Marketing",
 
   /* =======================================================
      OPEN GRAPH
-     Vista previa al compartir la web
   ======================================================= */
 
   openGraph: {
     type: "website",
     locale: "es_ES",
-
-    title: "Paula | Marketing, creatividad y contenido",
-
-    description:
-      "Ideas, estrategia y creatividad. Descubre los proyectos y el universo creativo de Paula.",
-
-    siteName: "Paula Portfolio",
+    siteName: SITE_NAME,
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    images: [
+      {
+        url: "/opengraph-image.png",
+        alt: "Paula RM Marketing",
+      },
+    ],
   },
 
   /* =======================================================
@@ -73,30 +85,25 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-
-    title: "Paula | Marketing, creatividad y contenido",
-
-    description:
-      "Marketing, contenido y creatividad. Un portfolio lleno de ideas con intención.",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: ["/opengraph-image.png"],
   },
 
   /* =======================================================
-     INDEXACIÓN TEMPORAL
-
-     Durante la revisión del portfolio mantenemos
-     la web fuera del índice de los buscadores.
-
-     IMPORTANTE:
-     Cambiar antes del lanzamiento definitivo.
+     INDEXACIÓN PÚBLICA
   ======================================================= */
 
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
 
     googleBot: {
-      index: false,
-      follow: false,
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
     },
   },
 };

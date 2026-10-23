@@ -1,19 +1,15 @@
 ﻿import type { MetadataRoute } from "next";
 
+const SITE_URL = "https://paularmmarketing.com";
+
 export default function robots(): MetadataRoute.Robots {
-  const url =
-    process.env.SITE_URL ||
-    (process.env.VERCEL_PROJECT_PRODUCTION_URL
-      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-      : "http://localhost:3000");
-
-  const siteUrl = url.replace(/\/+$/, "");
-
   return {
     rules: {
       userAgent: "*",
       allow: "/",
+      disallow: "/api/",
     },
-    sitemap: `${siteUrl}/sitemap.xml`,
+
+    sitemap: `${SITE_URL}/sitemap.xml`,
   };
 }
