@@ -3,13 +3,15 @@ import type { ReactNode } from "react";
 
 import { Geist, Geist_Mono } from "next/font/google";
 
+import CookieConsent from "@/components/analytics/CookieConsent";
+
 import "./globals.css";
 
 /* =========================================================
    CONFIGURACIÓN GENERAL
 ========================================================= */
 
-const SITE_URL = "https://paularmmarketing.com";
+const SITE_URL = "https://www.paularmmarketing.com";
 
 const SITE_NAME = "Paula RM Marketing";
 
@@ -36,7 +38,7 @@ const geistMono = Geist_Mono({
 });
 
 /* =========================================================
-   METADATOS GENERALES Y SEO
+   METADATOS GENERALES
 ========================================================= */
 
 export const metadata: Metadata = {
@@ -53,16 +55,12 @@ export const metadata: Metadata = {
 
   authors: [
     {
-      name: "Paula RM Marketing",
+      name: SITE_NAME,
       url: SITE_URL,
     },
   ],
 
-  creator: "Paula RM Marketing",
-
-  /* =======================================================
-     OPEN GRAPH
-  ======================================================= */
+  creator: SITE_NAME,
 
   openGraph: {
     type: "website",
@@ -74,14 +72,10 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/opengraph-image.png",
-        alt: "Paula RM Marketing",
+        alt: SITE_NAME,
       },
     ],
   },
-
-  /* =======================================================
-     TWITTER / X
-  ======================================================= */
 
   twitter: {
     card: "summary_large_image",
@@ -89,10 +83,6 @@ export const metadata: Metadata = {
     description: SITE_DESCRIPTION,
     images: ["/opengraph-image.png"],
   },
-
-  /* =======================================================
-     INDEXACIÓN PÚBLICA
-  ======================================================= */
 
   robots: {
     index: true,
@@ -122,7 +112,12 @@ export default function RootLayout({
       lang="es"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">
+        {children}
+
+        {/* Preferencias y analítica */}
+        <CookieConsent />
+      </body>
     </html>
   );
 }

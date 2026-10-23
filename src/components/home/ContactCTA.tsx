@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState, type FormEvent } from "react";
-
+import { trackContactLead } from "@/lib/analytics";
 import Link from "next/link";
 import { motion, useReducedMotion } from "motion/react";
 
@@ -84,6 +84,9 @@ export default function ContactCTA({
       }
 
       form.reset();
+
+      trackContactLead();
+
       setStatus("success");
     } catch (error) {
       setErrorMessage(
