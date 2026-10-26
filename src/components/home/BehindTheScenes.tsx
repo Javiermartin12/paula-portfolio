@@ -61,7 +61,7 @@ export default function BehindTheScenes({ images }: BehindTheScenesProps) {
       id="detras-de-camaras"
       className="relative isolate overflow-hidden bg-[#F9EDF0] py-20 text-[#30202A] sm:py-24 lg:py-32"
     >
-      {/* Decoración */}
+      {/* DECORACIÓN */}
 
       <div
         aria-hidden="true"
@@ -69,13 +69,21 @@ export default function BehindTheScenes({ images }: BehindTheScenesProps) {
       />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-        {/* Encabezado */}
+        {/* ENCABEZADO */}
 
         <motion.div
           initial={reduceMotion ? false : { opacity: 0, y: 28 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.7 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.2,
+          }}
+          transition={{
+            duration: 0.7,
+          }}
           className="max-w-3xl"
         >
           <div className="flex items-center gap-4">
@@ -102,7 +110,7 @@ export default function BehindTheScenes({ images }: BehindTheScenesProps) {
           </p>
         </motion.div>
 
-        {/* Galería */}
+        {/* GALERÍA */}
 
         <div className="mt-14 grid gap-8 md:grid-cols-3 md:gap-5 lg:gap-8">
           {moments.map((moment, index) => {
@@ -127,10 +135,16 @@ export default function BehindTheScenes({ images }: BehindTheScenesProps) {
                 }}
                 className="min-w-0"
               >
-                {/* Fotografía */}
+                {/* FOTOGRAFÍA */}
 
                 <div
-                  className={`group relative aspect-[4/5] overflow-hidden rounded-[26px] shadow-[0_25px_65px_-40px_rgba(90,35,65,0.25)] sm:rounded-[30px] ${moment.background}`}
+                  className={`
+                    group relative aspect-[4/3]
+                    overflow-hidden rounded-[26px]
+                    shadow-[0_25px_65px_-40px_rgba(90,35,65,0.25)]
+                    sm:rounded-[30px]
+                    ${moment.background}
+                  `}
                 >
                   {imageSrc ? (
                     <Image
@@ -138,13 +152,23 @@ export default function BehindTheScenes({ images }: BehindTheScenesProps) {
                       alt={`Momento creativo de Paula: ${moment.label}`}
                       fill
                       sizes="(max-width: 767px) 100vw, 33vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      className={`object-cover ${
+                        moment.id === "shooting"
+                          ? "object-[center_70%]"
+                          : "object-center"
+                      }`}
                     />
                   ) : (
+                    /* IMAGEN PENDIENTE */
+
                     <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
                       <div
                         aria-hidden="true"
-                        className={`absolute -right-12 -top-12 h-48 w-48 rounded-full ${moment.accent}`}
+                        className={`
+                          absolute -right-12 -top-12
+                          h-48 w-48 rounded-full
+                          ${moment.accent}
+                        `}
                       />
 
                       <div
@@ -176,14 +200,14 @@ export default function BehindTheScenes({ images }: BehindTheScenesProps) {
                     </div>
                   )}
 
-                  {/* Número flotante */}
+                  {/* NÚMERO FLOTANTE */}
 
                   <div className="absolute left-5 top-5 z-20 rounded-full border border-white/30 bg-white/85 px-4 py-2 text-xs font-bold text-[#563A48] backdrop-blur-sm">
                     {moment.number}
                   </div>
                 </div>
 
-                {/* Texto */}
+                {/* TEXTO DE CADA TARJETA */}
 
                 <div className="pt-6">
                   <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#B45178]">
@@ -203,7 +227,7 @@ export default function BehindTheScenes({ images }: BehindTheScenesProps) {
           })}
         </div>
 
-        {/* Frase editorial */}
+        {/* FRASE EDITORIAL */}
 
         <div className="mt-20 border-t border-[#E5BECD] pt-8 sm:mt-24">
           <p className="max-w-3xl font-serif text-2xl italic leading-relaxed text-[#AD587E] sm:text-3xl">
