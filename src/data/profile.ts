@@ -11,13 +11,13 @@ export const paulaProfile = {
 
   // Material de Mi mundo creativo
   creativePhoto: "",
-  creativeVideo: "",
-  creativeVideoPoster: "",
+  creativeVideo: "/videos/paula-mi-mundo.mp4",
+  creativeVideoPoster: "/images/paula/paula-mi-mundo-poster.webp",
 
   // Fotografías de Behind the scenes
   behindImages: {
     ideas: "",
-    shooting: "",
+    shooting: "/images/paula/paula-trabajando.webp",
     editing: "",
   },
 };

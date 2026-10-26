@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 
 import { motion, useReducedMotion } from "motion/react";
@@ -53,6 +54,8 @@ export default function CreativeWorld({
 }: CreativeWorldProps) {
   const reduceMotion = useReducedMotion();
 
+  const [videoStarted, setVideoStarted] = useState(false);
+
   const reveal = (delay = 0) => ({
     initial: reduceMotion ? false : { opacity: 0, y: 35 },
 
@@ -67,7 +70,7 @@ export default function CreativeWorld({
     },
 
     transition: {
-      duration: 0.75,
+      duration: reduceMotion ? 0 : 0.75,
       delay,
       ease: "easeOut" as const,
     },
@@ -78,7 +81,7 @@ export default function CreativeWorld({
       id="mi-mundo"
       className="relative isolate overflow-hidden bg-[#FFF9F4] py-20 text-[#30202A] sm:py-24 lg:py-32"
     >
-      {/* DECORACIÓN SUAVE */}
+      {/* DECORACIÓN DE FONDO */}
 
       <div
         aria-hidden="true"
@@ -90,10 +93,12 @@ export default function CreativeWorld({
         className="pointer-events-none absolute -left-40 bottom-10 h-80 w-80 rounded-full bg-[#FFE2B3]/30 blur-[100px]"
       />
 
-      {/* CONTENEDOR */}
+      {/* CONTENEDOR PRINCIPAL */}
 
       <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
-        {/* ENCABEZADO */}
+        {/* ================================================
+            ENCABEZADO
+        ================================================ */}
 
         <motion.div {...reveal()} className="max-w-4xl">
           <div className="flex items-center gap-4">
@@ -122,31 +127,82 @@ export default function CreativeWorld({
           </p>
         </motion.div>
 
-        {/* ===================================================
+        {/* ================================================
             COMPOSICIÓN VISUAL
-        =================================================== */}
+        ================================================ */}
 
         <div className="mt-14 grid items-start gap-6 sm:mt-16 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8">
-          {/* VÍDEO PRINCIPAL */}
+          {/* ============================================
+              VÍDEO PRINCIPAL DE PAULA
+          ============================================ */}
 
           <motion.div {...reveal(0.1)} className="relative">
             <div className="relative overflow-hidden rounded-[28px] bg-[#382535] shadow-[0_25px_70px_-40px_rgba(66,27,47,0.4)] sm:rounded-[34px]">
               <div className="relative aspect-[4/5] sm:aspect-[16/12] lg:aspect-[4/4.5]">
                 {videoSrc ? (
-                  <video
-                    controls
-                    playsInline
-                    preload="metadata"
-                    poster={videoPoster}
-                    className="absolute inset-0 h-full w-full object-cover"
-                  >
-                    <source src={videoSrc} />
-                    Tu navegador no admite este vídeo.
-                  </video>
-                ) : (
-                  <div className="absolute inset-0 flex flex-col items-center justify-center overflow-hidden px-8 text-center">
-                    {/* FORMAS DECORATIVAS */}
+                  videoStarted ? (
+                    /* VÍDEO REAL */
 
+                    <video
+                      controls
+                      autoPlay
+                      playsInline
+                      preload="metadata"
+                      poster={videoPoster}
+                      className="absolute inset-0 h-full w-full bg-[#241822] object-contain"
+                    >
+                      <source src={videoSrc} type="video/mp4" />
+                      Tu navegador no admite la reproducción de este vídeo.
+                    </video>
+                  ) : (
+                    /* PORTADA ANTES DE REPRODUCIR */
+
+                    <button
+                      type="button"
+                      onClick={() => setVideoStarted(true)}
+                      aria-label="Reproducir vídeo creativo de Paula"
+                      className="group absolute inset-0 flex h-full w-full flex-col items-center justify-center overflow-hidden bg-[#382535] text-center text-white"
+                    >
+                      {/* PORTADA */}
+
+                      {videoPoster ? (
+                        <Image
+                          src={videoPoster}
+                          alt=""
+                          fill
+                          sizes="(max-width: 1024px) 100vw, 55vw"
+                          className="object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                        />
+                      ) : (
+                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#75425D,#30202E_80%)]" />
+                      )}
+
+                      {/* OSCURECIMIENTO */}
+
+                      <div className="absolute inset-0 bg-black/20 transition-colors duration-300 group-hover:bg-black/35" />
+
+                      {/* BOTÓN PLAY */}
+
+                      <span className="relative z-10 flex h-24 w-24 items-center justify-center rounded-full border border-white/40 bg-white/20 shadow-xl backdrop-blur-md transition-all duration-300 group-hover:scale-110 group-hover:bg-[#E94E8F]">
+                        <Play
+                          size={36}
+                          fill="currentColor"
+                          strokeWidth={1.5}
+                          className="ml-1"
+                        />
+                      </span>
+
+                      {/* ETIQUETA */}
+
+                      <span className="absolute bottom-7 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-full border border-white/20 bg-[#30202E]/80 px-5 py-2.5 text-xs font-bold uppercase tracking-[0.12em] text-white backdrop-blur-md">
+                        Reproducir vídeo
+                      </span>
+                    </button>
+                  )
+                ) : (
+                  /* ESTADO PROVISIONAL */
+
+                  <div className="absolute inset-0 flex flex-col items-center justify-center overflow-hidden px-8 text-center">
                     <div
                       aria-hidden="true"
                       className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[#E66C9A]/30 blur-[50px]"
@@ -157,7 +213,7 @@ export default function CreativeWorld({
                       className="absolute -bottom-32 -left-20 h-80 w-80 rounded-full bg-[#E88CAF]/20 blur-[60px]"
                     />
 
-                    <div className="relative flex h-20 w-20 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-sm">
+                    <div className="relative flex h-20 w-20 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white">
                       <Play size={30} fill="currentColor" />
                     </div>
 
@@ -168,8 +224,8 @@ export default function CreativeWorld({
                     </p>
 
                     <p className="relative mt-5 max-w-xs text-sm leading-6 text-[#E8C7D5]">
-                      Espacio reservado para un vídeo de Paula creando contenido
-                      o trabajando en una campaña.
+                      Una mirada al proceso creativo y al trabajo detrás de cada
+                      idea.
                     </p>
                   </div>
                 )}
@@ -189,7 +245,9 @@ export default function CreativeWorld({
             </div>
           </motion.div>
 
-          {/* FOTOGRAFÍA SECUNDARIA */}
+          {/* ============================================
+              FOTOGRAFÍA SECUNDARIA
+          ============================================ */}
 
           <motion.div {...reveal(0.25)} className="relative lg:mt-20">
             <div className="relative overflow-hidden rounded-[28px] bg-[#F4ABC6] shadow-[0_25px_70px_-40px_rgba(133,49,85,0.3)] sm:rounded-[34px]">
@@ -203,6 +261,8 @@ export default function CreativeWorld({
                     className="object-cover"
                   />
                 ) : (
+                  /* FOTOGRAFÍA PENDIENTE */
+
                   <div className="absolute inset-0 flex flex-col items-center justify-center overflow-hidden px-7 text-center">
                     <div
                       aria-hidden="true"
@@ -223,8 +283,8 @@ export default function CreativeWorld({
                     </p>
 
                     <p className="relative mt-4 max-w-xs text-sm leading-6 text-[#8E506A]">
-                      Aquí incorporaremos una fotografía real de Paula
-                      trabajando, grabando o preparando contenido.
+                      Mi forma de crear, experimentar y transformar ideas en
+                      contenido.
                     </p>
                   </div>
                 )}
@@ -243,9 +303,9 @@ export default function CreativeWorld({
           </motion.div>
         </div>
 
-        {/* ===================================================
+        {/* ================================================
             PROCESO CREATIVO
-        =================================================== */}
+        ================================================ */}
 
         <div className="mt-24 border-t border-[#EBCDD7] pt-12 sm:mt-28 sm:pt-14">
           <motion.div {...reveal()} className="mb-10">
