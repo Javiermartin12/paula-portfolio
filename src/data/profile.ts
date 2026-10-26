@@ -18,6 +18,6 @@ export const paulaProfile = {
   behindImages: {
     ideas: "/images/paula/paula-behind-02.webp",
     shooting: "/images/paula/paula-trabajando.webp",
-    editing: "",
+    editing: "/images/paula/paula-behind-03.webp",
   },
 };
