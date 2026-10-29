@@ -34,9 +34,7 @@ export default function ContactCTA({
   const reduceMotion = useReducedMotion();
 
   const [status, setStatus] = useState<FormStatus>("idle");
-
   const [turnstileToken, setTurnstileToken] = useState("");
-
   const [errorMessage, setErrorMessage] = useState("");
 
   const turnstileRef = useRef<TurnstileInstance | null>(null);
@@ -327,6 +325,42 @@ export default function ContactCTA({
                   placeholder="Estoy pensando en..."
                   className="w-full resize-y rounded-xl border border-white/15 bg-white/[0.07] px-4 py-4 text-sm leading-7 text-white outline-none transition placeholder:text-white/45 focus:border-[#F4A0C4] focus:ring-2 focus:ring-[#F4A0C4]/20"
                 />
+              </div>
+
+              {/* Protección de datos */}
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <input
+                    id="contact-privacy"
+                    name="privacy"
+                    type="checkbox"
+                    required
+                    className="mt-1 h-4 w-4 shrink-0 rounded border-white/30 accent-[#F4A0C4]"
+                  />
+
+                  <label
+                    htmlFor="contact-privacy"
+                    className="text-sm leading-6 text-[#E1C8D5]"
+                  >
+                    He leído la información sobre el tratamiento de mis datos
+                    personales en la{" "}
+                    <Link
+                      href="/privacidad"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold text-[#FFB6D3] underline underline-offset-4 hover:text-white"
+                    >
+                      Política de Privacidad
+                    </Link>
+                    . *
+                  </label>
+                </div>
+
+                <p className="pl-7 text-xs leading-5 text-[#E1C8D5]">
+                  Los datos facilitados se utilizarán para gestionar y responder
+                  tu consulta. Consulta la Política de Privacidad para conocer
+                  más información sobre el tratamiento de tus datos.
+                </p>
               </div>
 
               {/* Protección Cloudflare */}
